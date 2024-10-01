@@ -1,29 +1,30 @@
 import { Box, Chip, Stack, Typography } from "@mui/material";
 import { rootColors } from "../../Utilities/rootColors";
-import { FaGithub } from "react-icons/fa";
-import { GoArrowUpRight } from "react-icons/go";
 import { NavLink } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
+import {GoArrowUpRight} from "react-icons/go"
+
 
 const ProjectCard = ({ title, imageUrl, techStack, githubUrl, liveUrl }) => {
   return (
     <Stack
       sx={{
         backgroundColor: rootColors.backgroundSecondary,
-        padding: { xs: "10px", sm: "15px", md: "10px" },
+        padding: { xs: "10px", sm: "15px", md: "20px" },
         borderRadius: "10px",
-        width: { xs: "100%", sm: "150px", md: "300px" },
-        height: { xs: "auto", sm: "150px", md: "400px" },
-        maxWidth: "100%",
+        width: "100%", // Ensure full width of Grid item
+        maxWidth: "350px", // Limit width for larger screens
+        height: "100%", // Allow flexibility in height
       }}
     >
       <Stack
         sx={{
           width: "100%",
-          height: { xs: "120px", sm: "100px", md: "200px" },
+          height: { xs: "120px", sm: "200px", md: "250px" },
           backgroundImage: `url(${imageUrl})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: { xs: "center", md: "top center" },
+          backgroundSize: {md: "cover",  xs: "contain"},
+          backgroundPosition: "center",
           borderRadius: "10px",
         }}
       >
@@ -47,8 +48,8 @@ const ProjectCard = ({ title, imageUrl, techStack, githubUrl, liveUrl }) => {
                 padding: "5px",
                 "&:hover": {
                   backgroundColor: rootColors.HighlightColor,
-                  color: rootColors.backgroundPrimary, // Lighter on hover
-                  cursor: "pointer", // Optional: change cursor on hover
+                  color: rootColors.backgroundPrimary,
+                  cursor: "pointer",
                 },
               }}
             >
@@ -66,8 +67,8 @@ const ProjectCard = ({ title, imageUrl, techStack, githubUrl, liveUrl }) => {
                 padding: "5px",
                 "&:hover": {
                   backgroundColor: rootColors.HighlightColor,
-                  color: rootColors.backgroundPrimary, // Lighter on hover
-                  cursor: "pointer", // Optional: change cursor on hover
+                  color: rootColors.backgroundPrimary,
+                  cursor: "pointer",
                 },
               }}
             >
@@ -83,7 +84,9 @@ const ProjectCard = ({ title, imageUrl, techStack, githubUrl, liveUrl }) => {
             gap: "3px",
             flexDirection: "row",
             flexWrap: "wrap",
-            height: "70px",
+            justifyContent: "flex-start",
+            width: "100%",
+            height: "60px !important",
           }}
         >
           {techStack.map((tech, index) => (
@@ -94,12 +97,7 @@ const ProjectCard = ({ title, imageUrl, techStack, githubUrl, liveUrl }) => {
                 <Typography
                   variant="body3"
                   sx={{
-                    fontSize: {
-                      xs: "0.875rem",
-                      sm: "1rem",
-                      md: "0.875rem",
-                      xl: "1rem",
-                    }, // Responsive font size
+                    fontSize: { xs: "0.875rem", sm: "1rem" },
                     color: rootColors.textSecondary,
                   }}
                 >
@@ -123,9 +121,9 @@ const ProjectCard = ({ title, imageUrl, techStack, githubUrl, liveUrl }) => {
         </Stack>
 
         <Typography
-          variant="h6" // Larger font size for the title
+          variant="h6"
           sx={{
-            fontSize: { xs: "1.2rem", sm: "1.5rem" }, // Responsive font size
+            fontSize: { xs: "1.2rem", sm: "1.5rem" },
             fontWeight: 500,
             wordWrap: "break-word",
             overflow: "hidden",
@@ -137,9 +135,9 @@ const ProjectCard = ({ title, imageUrl, techStack, githubUrl, liveUrl }) => {
         </Typography>
 
         <Typography
-          variant="body2" // Smaller font size for the description
+          variant="body2"
           sx={{
-            fontSize: { xs: "0.875rem", sm: "1rem" }, // Responsive font size
+            fontSize: { xs: "0.875rem", sm: "1rem" },
             whiteSpace: "normal",
             overflow: "hidden",
             textOverflow: "ellipsis",
