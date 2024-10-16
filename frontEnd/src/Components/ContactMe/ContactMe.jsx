@@ -11,7 +11,7 @@ const ContactMe = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
-const backendUrl = import.meta.env.VITE_BACKENDURL;
+  const backendUrl = import.meta.env.VITE_BACKENDURL;
   const validateForm = () => {
     if (name === "" || email === "" || message === "" || subject === "") {
       toast.error("Please fill out all fields.");
@@ -25,38 +25,38 @@ const backendUrl = import.meta.env.VITE_BACKENDURL;
     return true;
   };
   const handleSendEmail = (e) => {
-     if (validateForm()) {
-    e.preventDefault();
-    //make Tamplate
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      to_name: "Adarsh JOB SEEKER",
-      subject: subject,
-      message: message,
-    };
+    if (validateForm()) {
+      e.preventDefault();
+      //make Tamplate
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        to_name: "Adarsh JOB SEEKER",
+        subject: subject,
+        message: message,
+      };
 
-    // Send email
-    axios
-      .post(`${backendUrl}/mail`, templateParams)
-      .then((response) => {
-        toast.success("Email sent successfully");
-        // Reset form fields
-        setName("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
-      })
-      .catch((error) => {
-        console.error("Error sending email:", error);
-        toast.error("Error sending email");
-      });
-  }
+      // Send email
+      axios
+        .post(`${backendUrl}/mail`, templateParams)
+        .then((response) => {
+          toast.success("Email sent successfully");
+          // Reset form fields
+          setName("");
+          setEmail("");
+          setSubject("");
+          setMessage("");
+        })
+        .catch((error) => {
+          console.error("Error sending email:", error);
+          toast.error("Error sending email");
+        });
+    }
   };
 
   return (
     <>
-    <Toaster position="top-center" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
       <Stack
         id="contact"
         sx={{
