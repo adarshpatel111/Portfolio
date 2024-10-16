@@ -11,7 +11,7 @@ const ContactMe = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
-const backendUrl=import.meta.env.VITE_BACKEND_URL
+const backendUrl = import.meta.env.VITE_BACKENDURL;
   const validateForm = () => {
     if (name === "" || email === "" || message === "" || subject === "") {
       toast.error("Please fill out all fields.");
@@ -162,8 +162,8 @@ const backendUrl=import.meta.env.VITE_BACKEND_URL
                   borderRadius: "50px",
                   width: { xs: "80%", sm: "60%", md: "30%" }, // Responsive width
                 }}
-                onClick={() => {
-                  handleSendEmail();
+                onClick={(e) => {
+                  handleSendEmail(e);
                 }}
               >
                 Send Message
