@@ -2,7 +2,7 @@ import { Stack, Typography } from "@mui/material";
 import { rootColors } from "../../Utilities/rootColors";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import Bsrewebsite from "../../assets/BsreWebsiteImg.png";
-import RGAVwebsite from "../../assets/rgavWebsiteimg.png";
+import RGAVwebsite from "../../assets/RgavWebsiteimg.png";
 import PhoenixShopping from "../../assets/PhoenixshoppingWebsiteImg.png";
 import ApTechnicalWebsiteImg from "../../assets/ApTechnicalWebsiteImg.png";
 import PizzeriaWebsite from "../../assets/PizzeriaWebsiteImg.png";
