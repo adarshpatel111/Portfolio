@@ -4,11 +4,11 @@ const app = express();
 const dotenv = require("dotenv");
 dotenv.config();
 cors = require("cors");
-
+const frontendUrl = process.env.FRONTEND_URL;
 app.use(express.json());    
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: frontendUrl,
   })
 );
 const PORT = process.env.PORT || 3000;
