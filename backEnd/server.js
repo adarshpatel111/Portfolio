@@ -5,10 +5,10 @@ const dotenv = require("dotenv");
 dotenv.config();
 cors = require("cors");
 const frontendUrl = process.env.FRONTEND_URL;
-app.use(express.json());    
+app.use(express.json());
 app.use(
   cors({
-    origin: frontendUrl,
+    origin: [frontendUrl, "http://localhost:5173"],
   })
 );
 const PORT = process.env.PORT || 3000;
