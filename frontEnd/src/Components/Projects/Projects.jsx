@@ -1,7 +1,7 @@
 import { Stack, Typography } from "@mui/material";
 import { rootColors } from "../../Utilities/rootColors";
 import ProjectCard from "../ProjectCard/ProjectCard";
-import bsrewebsite from "../../assets/BsreWebsiteimg.png";
+import Bsrewebsite from "../../assets/BsreWebsiteimg.png";
 import RGAVwebsite from "../../assets/rgavWebsiteimg.png";
 import PhoenixShopping from "../../assets/PhoenixshoppingWebsiteImg.png";
 import ApTechnicalWebsiteImg from "../../assets/ApTechnicalWebsiteImg.png";
@@ -20,7 +20,7 @@ const Projects = () => {
   const projectData = [
     {
       title: "BSRE WEBSITE",
-      imageUrl: bsrewebsite,
+      imageUrl: Bsrewebsite,
       githubUrl: "https://www.bsre.in/",
       liveUrl: "https://www.bsre.in/",
       techStack: [
