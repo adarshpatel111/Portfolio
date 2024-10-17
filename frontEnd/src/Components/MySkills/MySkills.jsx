@@ -88,29 +88,10 @@ const Skills = () => {
       <Stack
         sx={{
           flexDirection: { xs: "column", md: "row" },
-          justifyContent: "space-between",
+          justifyContent: "center",
         }}
       >
-        <Stack
-          sx={{
-            width: { xs: "100%", md: "100%" },
-            maxWidth: "500px",
-            flexDirection: "row",
-            justifyContent: "start",
-            alignItems: "center",
-          }}
-        >
-          <Typography
-            variant="body1"
-            color={rootColors.textSecondary}
-            align="left"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            velit veritatis odit officia nostrum eum fugit sint ipsa, cum vitae
-            molestias, corporis quis, totam doloribus deleniti adipisci quidem
-            illo ad!
-          </Typography>
-        </Stack>
+        
         <Stack
           sx={{
             width: { xs: "100%", md: "45%" },

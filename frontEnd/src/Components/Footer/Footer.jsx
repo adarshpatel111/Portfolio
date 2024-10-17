@@ -7,6 +7,7 @@ import { SiIndeed } from "react-icons/si";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
     <Stack
       sx={{
@@ -139,39 +140,37 @@ const Footer = () => {
               textAlign: { xs: "left", md: "left" },
             }}
           >
-            {["hero", "about", "skills", "projects", "contact"].map(
-              (path, index) => (
-                <Link
-                  to={path}
-                  key={index}
-                  spy={true}
-                  smooth={true}
-                  hashSpy={true}
-                  offset={-100}
-                  duration={500}
-                  style={{
-                    textDecoration: "none",
-                    color: rootColors.textSecondary,
+            {["hero", "skills", "projects", "contact"].map((path, index) => (
+              <Link
+                to={path}
+                key={index}
+                spy={true}
+                smooth={true}
+                hashSpy={true}
+                offset={-100}
+                duration={500}
+                style={{
+                  textDecoration: "none",
+                  color: rootColors.textSecondary,
+                }}
+              >
+                <Typography
+                  variant="body2"
+                  sx={{
+                    "&:hover": {
+                      color: rootColors.HighlightColor,
+                      textDecoration: "underline",
+                      transform: "scaleX(1.1)",
+                      cursor: "pointer",
+                    },
                   }}
                 >
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      "&:hover": {
-                        color: rootColors.HighlightColor,
-                        textDecoration: "underline",
-                        transform: "scaleX(1.1)",
-                        cursor: "pointer",
-                      },
-                    }}
-                  >
-                    {path === "hero"
-                      ? "Home"
-                      : path.charAt(0).toUpperCase() + path.slice(1)}
-                  </Typography>
-                </Link>
-              )
-            )}
+                  {path === "hero"
+                    ? "Home"
+                    : path.charAt(0).toUpperCase() + path.slice(1)}
+                </Typography>
+              </Link>
+            ))}
           </Stack>
         </Stack>
 
@@ -220,16 +219,8 @@ const Footer = () => {
         sx={{ marginTop: 10, width: "90%", margin: "auto" }}
       >
         <Typography variant="body1" color={rootColors.textSecondary}>
-          © 2023 Adarsh Patel. All rights reserved.
+          © {year} Adarsh Patel. All rights reserved.
         </Typography>
-        <Stack direction="row" spacing={2} sx={{ mt: { xs: 2, md: 0 } }}>
-          <Typography variant="body2" color={rootColors.textSecondary}>
-            Privacy Policy
-          </Typography>
-          <Typography variant="body2" color={rootColors.textSecondary}>
-            Terms of Service
-          </Typography>
-        </Stack>
       </Stack>
     </Stack>
   );
